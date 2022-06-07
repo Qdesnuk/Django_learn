@@ -1,20 +1,28 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
 
 
 def index(request):
-    return HttpResponse('<h2> Главная </h2>')
+    return HttpResponse('Index')
+
 
 def about(request):
-    return HttpResponse('<h2> О сайте </h2>')
+    return HttpResponse('About')
+
 
 def contact(request):
-    return HttpResponse('<h2> Контакты </h2>')
+    return HttpResponseRedirect('/about')
+
+
+def details(request):
+    return HttpResponsePermanentRedirect('/')
+
 
 def products(request, product_id):
     category = request.GET.get('cat', '')
     output = f"<h2> Продукт № {product_id}  Категория: {category}"
     return HttpResponse(output)
+
 
 def users(request):
     id = request.GET.get('id', 1)
