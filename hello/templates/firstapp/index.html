@@ -1,5 +1,20 @@
-{% extends 'firstapp/base.html' %}
+{% comment %}
+<!--{% extends 'firstapp/base.html' %}-->
 
-{% block title %} Index {% endblock title %}
-{% block header %} Главная страница {% endblock header %}
-{% block content %} Связка шаблонов index.html и base.html {% endblock content %}
+<!--{% block title %} Index {% endblock title %}-->
+<!--{% block header %} Главная страница {% endblock header %}-->
+<!--{% block content %} Связка шаблонов index.html и base.html {% endblock content %}-->
+{% endcomment %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма Django</title>
+</head>
+<body>
+    <table>
+        {{ form }}
+    </table>
+</body>
+</html>

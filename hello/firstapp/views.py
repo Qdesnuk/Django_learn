@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
+from .forms import UserForm
 
 
 def index(request):
@@ -9,7 +10,8 @@ def index(request):
     # user = {'name': 'Максим', 'age': 30}
     # addr = ('Виноградная', 23, 45)
     # data = {'header': header, 'langs': langs, 'user': user, 'address': addr}
-    return render(request, 'firstapp/index.html')
+    userform = UserForm()
+    return render(request, 'firstapp/index.html', context={"form": userform})
 
 def about(request):
     return render(request,'firstapp/about.html')
