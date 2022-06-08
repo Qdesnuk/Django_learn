@@ -4,12 +4,12 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanen
 
 def index(request):
     # return render(request, 'firstapp/home.html')
-    header = 'Персональные данные'
-    langs = ['Английский', 'Немецкий', 'Испанский']
-    user = {'name': 'Максим', 'age': 30}
-    addr = ('Виноградная', 23, 45)
-    data = {'header': header, 'langs': langs, 'user': user, 'address': addr}
-    return render(request, 'index.html', context=data)
+    # header = 'Персональные данные'
+    # langs = ['Английский', 'Немецкий', 'Испанский']
+    # user = {'name': 'Максим', 'age': 30}
+    # addr = ('Виноградная', 23, 45)
+    # data = {'header': header, 'langs': langs, 'user': user, 'address': addr}
+    return render(request, 'firstapp/index.html')
 
 def about(request):
     return HttpResponse('About')
