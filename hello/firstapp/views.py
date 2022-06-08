@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
+from django.http import *
 from .forms import UserForm
 
 
@@ -10,11 +10,18 @@ def index(request):
     # user = {'name': 'Максим', 'age': 30}
     # addr = ('Виноградная', 23, 45)
     # data = {'header': header, 'langs': langs, 'user': user, 'address': addr}
-    userform = UserForm()
-    return render(request, 'firstapp/index.html', context={"form": userform})
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        age = request.POST.get('age')
+        output = f'<h2>Пользователь</h2><h3>Имя - {name}, Возраст - {age}</h3>'
+        # return render(request, 'firstapp/index.html', context={"form": userform})
+        return HttpResponse(output)
+    else:
+        userform = UserForm()
+        return render(request, 'firstapp/index.html', context={"form": userform})
 
 def about(request):
-    return render(request,'firstapp/about.html')
+    return render(request, 'firstapp/about.html')
 
 
 def contact(request):
