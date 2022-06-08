@@ -13,8 +13,13 @@
     <title>Форма Django</title>
 </head>
 <body>
+<form method="post">
+    {% csrf_token %}
     <table>
         {{ form }}
     </table>
+    <input type="submit" value="Отправить">
+</form>
+    
 </body>
 </html>
