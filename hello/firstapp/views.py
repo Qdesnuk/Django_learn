@@ -4,21 +4,8 @@ from .forms import UserForm
 
 
 def index(request):
-    # return render(request, 'firstapp/home.html')
-    # header = 'Персональные данные'
-    # langs = ['Английский', 'Немецкий', 'Испанский']
-    # user = {'name': 'Максим', 'age': 30}
-    # addr = ('Виноградная', 23, 45)
-    # data = {'header': header, 'langs': langs, 'user': user, 'address': addr}
-    if request.method == 'POST':
-        name = request.POST.get('name')
-        age = request.POST.get('age')
-        output = f'<h2>Пользователь</h2><h3>Имя - {name}, Возраст - {age}</h3>'
-        # return render(request, 'firstapp/index.html', context={"form": userform})
-        return HttpResponse(output)
-    else:
-        userform = UserForm()
-        return render(request, 'firstapp/index.html', context={"form": userform})
+    userform = UserForm()
+    return render(request, 'firstapp/index.html', context={"form": userform})
 
 def about(request):
     return render(request, 'firstapp/about.html')
