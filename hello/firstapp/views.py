@@ -12,7 +12,7 @@ def index(request):
     return render(request, 'firstapp/index.html')
 
 def about(request):
-    return HttpResponse('About')
+    return render(request,'firstapp/about.html')
 
 
 def contact(request):
