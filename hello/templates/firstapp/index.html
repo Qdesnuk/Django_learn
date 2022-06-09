@@ -14,8 +14,8 @@
 </head>
 <body>
 
-<h2>Форма как параграф</h2>
-    <form method="post">
+<h2>Валидация данных</h2>
+    <form method="post" novalidate>
         {% csrf_token %}
         <div>
             {{ form.as_p }}

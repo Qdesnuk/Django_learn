@@ -7,7 +7,7 @@ def index(request):
     if request.method == 'POST':
         userform = UserForm(request.POST)
         if userform.is_valid():
-            name = userform.cleaned_data('name')
+            name = userform.cleaned_data['name']
             return HttpResponse(f'<h2> Имя {name} введено корректно </h2>')
         else:
             return HttpResponse('Ошибка ввода данных')
