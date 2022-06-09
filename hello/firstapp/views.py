@@ -7,6 +7,7 @@ def index(request):
     userform = UserForm()
     return render(request, 'firstapp/index.html', context={"form": userform})
 
+
 def about(request):
     return render(request, 'firstapp/about.html')
 
